@@ -1,0 +1,6 @@
+name: jc4827
+files:
+  - jc4827_display.h
+  - jc4827_display.cpp
+  - jc4827_touch.h
+  - jc4827_touch.cpp
