@@ -15,6 +15,3 @@ CONFIG_SCHEMA = display.FULL_DISPLAY_SCHEMA.extend({
 async def to_code(config):
     var = cg.new_Pvariable(config[cv.CONF_ID])
     await display.register_display(var, config)
-    
-    # Passing "" prevents ESPHome from appending @None to the URL
-cg.add_library("https://github.com/mmicko/TouchLib.git", "master")
