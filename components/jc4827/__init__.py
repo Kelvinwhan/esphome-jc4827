@@ -16,5 +16,5 @@ async def to_code(config):
     var = cg.new_Pvariable(config[cv.CONF_ID])
     await display.register_display(var, config)
     
-    # Download and link TouchLib repository
-    cg.add_library("TouchLib", None)
+    # Point directly to the TouchLib repository URL
+    cg.add_library("TouchLib", None, "https://github.com/mmicko/TouchLib.git")
