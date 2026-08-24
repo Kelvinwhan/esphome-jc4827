@@ -1,5 +1,5 @@
 #include "esphome.h"
-#include <Wire.h>
+#include "esphome/components/i2c/i2c.h"
 #include <TouchLib.h>
 
 class JC4827Touch : public esphome::Component {
