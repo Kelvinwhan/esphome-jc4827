@@ -2,10 +2,12 @@ import esphome.codegen as cg
 import esphome.config_validation as cv
 from esphome.components import display
 
+# Tell ESPHome that loading jc4827 automatically includes the display component
+AUTO_LOAD = ["display"]
+
 jc4827_ns = cg.esphome_ns.namespace("jc4827")
 JC4827 = jc4827_ns.class_("JC4827", display.DisplayBuffer)
 
-# Define the schema so ESPHome can validate it in YAML
 CONFIG_SCHEMA = display.FULL_DISPLAY_SCHEMA.extend({
     cv.GenerateID(): cv.declare_id(JC4827),
 }).extend(cv.COMPONENT_SCHEMA)
