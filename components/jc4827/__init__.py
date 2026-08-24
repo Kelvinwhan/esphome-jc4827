@@ -2,8 +2,8 @@ import esphome.codegen as cg
 import esphome.config_validation as cv
 from esphome.components import display
 
-# Tell ESPHome that loading jc4827 automatically includes the display component
-AUTO_LOAD = ["display"]
+DEPENDENCIES = ["i2c"]
+AUTO_LOAD = ["display", "i2c"]
 
 jc4827_ns = cg.esphome_ns.namespace("jc4827")
 JC4827 = jc4827_ns.class_("JC4827", display.DisplayBuffer)
