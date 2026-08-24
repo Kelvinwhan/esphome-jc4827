@@ -6,7 +6,7 @@ JC4827 = jc4827_ns.class_('JC4827', cg.Component)
 
 CONFIG_SCHEMA = cv.Schema({
     cv.GenerateID(): cv.declare_id(JC4827),
-})
+}).extend(cv.COMPONENT_SCHEMA)
 
 async def to_code(config):
     var = cg.new_Pvariable(config[cv.CONF_ID])
