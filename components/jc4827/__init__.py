@@ -1,13 +1,14 @@
 import esphome.codegen as cg
 import esphome.config_validation as cv
+from esphome.components import display
 
 jc4827_ns = cg.esphome_ns.namespace('jc4827')
-JC4827 = jc4827_ns.class_('JC4827', cg.Component)
+JC4827 = jc4827_ns.class_('JC4827', display.DisplayBuffer)
 
-CONFIG_SCHEMA = cv.Schema({
+CONFIG_SCHEMA = display.FULL_DISPLAY_SCHEMA.extend({
     cv.GenerateID(): cv.declare_id(JC4827),
 }).extend(cv.COMPONENT_SCHEMA)
 
 async def to_code(config):
     var = cg.new_Pvariable(config[cv.CONF_ID])
-    await cg.register_component(var, config)
+    await display.register_display(var, config)
