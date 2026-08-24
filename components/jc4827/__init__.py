@@ -16,5 +16,5 @@ async def to_code(config):
     var = cg.new_Pvariable(config[cv.CONF_ID])
     await display.register_display(var, config)
     
-    # Download and link TouchLib repository without appending @None
+    # Passing "" prevents ESPHome from appending @None to the URL
     cg.add_library("https://github.com/mmicko/TouchLib.git", "")
