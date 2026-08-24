@@ -2,7 +2,7 @@ import esphome.codegen as cg
 import esphome.config_validation as cv
 from esphome import core
 
-# Create a namespace for your component
+# Namespace for your component
 jc4827_ns = cg.esphome_ns.namespace('jc4827')
 JC4827 = jc4827_ns.class_('JC4827', cg.Component)
 
