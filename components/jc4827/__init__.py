@@ -16,5 +16,5 @@ async def to_code(config):
     var = cg.new_Pvariable(config[cv.CONF_ID])
     await display.register_display(var, config)
     
-    # Specify the library using direct repo link format without None
-    cg.add_library("https://github.com/mmicko/TouchLib.git", None)
+    # Download and link TouchLib repository without appending @None
+    cg.add_library("https://github.com/mmicko/TouchLib.git", "")
