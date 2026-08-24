@@ -17,4 +17,4 @@ async def to_code(config):
     await display.register_display(var, config)
     
     # Passing "" prevents ESPHome from appending @None to the URL
-    cg.add_library("https://github.com/mmicko/TouchLib.git", "")
+cg.add_library("https://github.com/mmicko/TouchLib.git", "master")
