@@ -1,17 +1,27 @@
 #include "jc4827_touch.h"
+#include "esphome/core/log.h"
+#include "esphome/components/lvgl/lvgl.h"
+#include <Wire.h>
 
-JC4827Touch::JC4827Touch(esphome::DisplayBuffer *disp) {
+namespace esphome {
+namespace jc4827 {
+
+JC4827Touch::JC4827Touch(DisplayBuffer *disp) {
   display = disp;
+  touch = nullptr;
 }
 
 void JC4827Touch::setup() {
-  Wire.begin(8, 4); // SDA=GPIO8, SCL=GPIO4
-  touch = new TouchLib(Wire, 0x5D, 3, 38); // addr=0x5D, INT=GPIO3, RST=GPIO38
+  // Initialize I2C bus on GPIO8 (SDA) and GPIO4 (SCL)
+  Wire.begin(8, 4);
+
+  // addr=0x5D, INT=GPIO3, RST=GPIO38
+  touch = new TouchLib(Wire, 0x5D, 3, 38);
   touch->begin();
 }
 
 void JC4827Touch::loop() {
-  if (touch->available()) {
+  if (touch != nullptr && touch->available()) {
     TP_Point p = touch->read();
     ESP_LOGI("touch", "Touch at x=%d y=%d", p.x, p.y);
     lvgl::touch_update(p.x, p.y, true);
@@ -19,3 +29,6 @@ void JC4827Touch::loop() {
     lvgl::touch_update(0, 0, false);
   }
 }
+
+}  // namespace jc4827
+}  // namespace esphome
