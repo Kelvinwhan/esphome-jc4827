@@ -59,3 +59,7 @@ def to_code_touch(config):
     if "reset_pin" in config:
         rst = yield cg.gpio_pin_expression(config["reset_pin"])
         cg.add(var.set_reset_pin(rst))
+COMPONENTS = {
+    "jc4827": (CONFIG_SCHEMA, to_code),
+    "jc4827_touch": (CONFIG_SCHEMA_TOUCH, to_code_touch),
+}
