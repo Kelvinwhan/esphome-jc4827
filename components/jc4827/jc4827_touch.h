@@ -1,14 +1,23 @@
-#include "esphome.h"
-#include "esphome/components/i2c/i2c.h"
-#include <TouchLib.h>
+#pragma once
 
-class JC4827Touch : public esphome::Component {
+#include "esphome/core/component.h"
+#include "esphome/components/display/display_buffer.h"
+#include "TouchLib.h"
+
+namespace esphome {
+namespace jc4827 {
+
+class JC4827Touch : public Component {
  public:
-  JC4827Touch(esphome::DisplayBuffer *disp);
+  explicit JC4827Touch(DisplayBuffer *disp);
+
   void setup() override;
   void loop() override;
 
  private:
+  DisplayBuffer *display;
   TouchLib *touch;
-  esphome::DisplayBuffer *display;
 };
+
+}  // namespace jc4827
+}  // namespace esphome
