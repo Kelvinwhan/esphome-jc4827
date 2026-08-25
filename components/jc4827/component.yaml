@@ -5,5 +5,10 @@ files:
   - jc4827_touch.cpp
   - jc4827_touch.h
   - __init__.py
-includes:
-  - lib/TouchLib/src
+requires:
+  - display
+
+# Register both blocks
+yaml:
+  - jc4827
+  - jc4827_touch
