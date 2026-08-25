@@ -6,4 +6,4 @@ files:
   - jc4827_touch.h
   - jc4827_touch.cpp
 libraries:
-  - "https://github.com/mmicko/TouchLib"
+  - "https://github.com/admarschoonen/TouchLib"
