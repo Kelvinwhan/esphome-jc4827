@@ -4,8 +4,8 @@ from esphome.components import display
 from esphome.const import CONF_ID
 
 jc4827_ns = cg.esphome_ns.namespace('jc4827')
-JC4827Display = jc4827_ns.class_('JC4827Display', display.DisplayBuffer)
-JC4827Touch = jc4827_ns.class_('JC4827Touch', cg.Component)
+JC4827Display = jc4827_ns.class_('JC4827_Display', display.DisplayBuffer)
+JC4827Touch = jc4827_ns.class_('JC4827_Touch', cg.Component)
 
 # Schema for display
 CONFIG_SCHEMA_DISPLAY = cv.Schema({
