@@ -4,5 +4,6 @@ files:
   - jc4827_display.h
   - jc4827_touch.cpp
   - jc4827_touch.h
+  - __init__.py
 includes:
   - lib/TouchLib/src
