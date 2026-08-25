@@ -1,9 +1,8 @@
 name: jc4827
 files:
-  - jc4827.cpp
-  - jc4827_display.h
   - jc4827_display.cpp
-  - jc4827_touch.h
+  - jc4827_display.h
   - jc4827_touch.cpp
-libraries:
-  - "https://github.com/admarschoonen/TouchLib"
+  - jc4827_touch.h
+includes:
+  - lib/TouchLib/src
